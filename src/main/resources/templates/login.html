@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/login.js" defer></script>
+</head>
+<body>
+<form method="post" action="/login">
+    <div class="container">
+        <h1>로그인</h1>
+        <h2 th:text="${error} ? ${error} : ''"></h2>
+        <div>로그인에 이용할 정보를 선택하세요.</div>
+        <div class="form-group">
+            <label for="inputEmail">이메일</label><input type="radio" name="loginInfo" value="inputEmail" onClick="handleClick(this)" checked/>
+            <input type="text" class="form-control" id="inputEmail" name="userEmail" placeholder="이메일">
+        </div>
+        <div class="form-group">
+            <label for="inputPhoneNumber">전화번호</label><input type="radio" name="loginInfo" value="inputPhoneNumber" onClick="handleClick(this)"/>
+            <input type="text" class="form-control" id="inputPhoneNumber" name="userPhoneNumber" placeholder="전화번호" disabled>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword">비밀번호</label>
+            <input type="password" class="form-control" id="inputPassword" name="userPw" placeholder="비밀번호">
+        </div>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary" onClick="a()">로그인</button>
+    </div>
+</form>
+</body>
+</html>

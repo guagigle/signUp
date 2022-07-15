@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pretask.signup.mapper.CertificateMapper">
+    <insert id="createCertificateInfo" parameterType="com.pretask.signup.DTO.CertificateInfoDTO">
+        INSERT INTO CERTIFICATE_INFO
+        (PHONE_NUMBER, CERTIFICATE_NUMBER, CREATED)
+        VALUES(#{phoneNumber},#{certificateNumber},#{created});
+    </insert>
+    <select id="getCertificateNumber" parameterType="java.lang.String" resultType="com.pretask.signup.DTO.CertificateInfoDTO">
+        SELECT * FROM CERTIFICATE_INFO
+        WHERE PHONE_NUMBER = #{phoneNumber};
+    </select>
+    <update id="updateCertificateInfo" parameterType="com.pretask.signup.DTO.CertificateInfoDTO">
+        UPDATE CERTIFICATE_INFO
+        SET CERTIFICATE_NUMBER = #{certificateNumber}, CREATED = #{created}
+        WHERE PHONE_NUMBER = #{phoneNumber};
+    </update>
+</mapper>

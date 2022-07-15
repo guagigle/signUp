@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pretask.signup.mapper.UserMapper">
+    <insert id="saveUser" parameterType="com.pretask.signup.DTO.SignUpDTO">
+        INSERT INTO USER_INFO
+        (USER_EMAIL, USER_NICKNAME, USER_PW, USER_NAME, USER_PHONE_NUMBER)
+        VALUES(#{userEmail},#{userNickName},#{userPw},#{userName},#{userPhoneNumber});
+    </insert>
+    <select id="getUserInfoByEmail" parameterType="java.lang.String" resultType="com.pretask.signup.DTO.SignUpDTO">
+        SELECT * FROM USER_INFO
+        WHERE USER_EMAIL = #{userEmail};
+    </select>
+    <select id="getUserInfoByPhoneNumber" parameterType="java.lang.String" resultType="com.pretask.signup.DTO.SignUpDTO">
+        SELECT * FROM USER_INFO
+        WHERE USER_PHONE_NUMBER = #{userPhoneNumber};
+    </select>
+    <update id="changePassword" parameterType="com.pretask.signup.DTO.PasswordDTO">
+        UPDATE USER_INFO
+        SET USER_PW = #{password}
+        WHERE USER_PHONE_NUMBER = #{phoneNumber};
+    </update>
+</mapper>

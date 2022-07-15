@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/phoneCertificate.js" defer></script>
+</head>
+<body>
+<h1>회원가입</h1>
+<div id="phoneNumberArea">
+    <div style ="display: flex;">
+        <div class="form-group" style="display: flex; align-items: center;">
+            <label for="inputPhoneNumber" style="width:150px; text-align: center;">전화번호</label>
+            <input type="text" class="form-control" id="inputPhoneNumber" name="userPhoneNumber" placeholder="전화번호">
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary" onClick="getNum()">인증번호 받기</button>
+        </div>
+    </div>
+</div>
+<div id="certificationArea">
+    <div style="display:flex;">
+        <div class="form-group" style="display: flex; align-items: center;">
+            <label for="inputCertificateNum" style="width:150px; text-align: center;">인증번호</label>
+            <input type="text" class="form-control" id="inputCertificateNum" name="certificateNum" placeholder="인증번호">
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary" onClick="checkNum()">인증</button>
+        </div>
+    </div>
+</div>
+<h2>이미 가입했다면?</h2>
+<button type="submit" class="btn btn-primary" onClick="login()">로그인하러 가기</button>
+<button type="submit" class="btn btn-primary" onClick="findPw()">비밀번호 찾기</button>
+</body>
+</html>

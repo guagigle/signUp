@@ -1,0 +1,15 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script th:inline="javascript">
+    let userInfo = /*[[${userInfo}]]*/
+</script>
+<script src="js/welcome.js" defer></script>
+</head>
+<body>
+	<p th:text="'안녕하세요. ' +${userInfo.userNickName} +'님'">안녕하세요. 손님</p>
+	<button type="submit" class="btn btn-primary" onClick="showUserInfo(userInfo)">내 정보 보기</button>
+	<button type="submit" class="btn btn-primary" onClick="logOut()">로그아웃</button>
+	<div id="userInfoArea"></div>
+</body>
+</html>
